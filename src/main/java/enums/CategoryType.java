@@ -4,8 +4,8 @@ public enum CategoryType {
     REGRESSION,
     SANITY,
     SMOKE,
-    ENDTOEND,
-    UAT
+    UAT,
+    E2E
 
 
 }
