@@ -1,14 +1,9 @@
 package base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.math3.geometry.spherical.twod.Edge;
-import org.apache.groovy.json.internal.Chr;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -114,6 +109,7 @@ public class BrowserFactory {
     }
 
 
+
     private ChromeOptions setSauceChromeOptions(){
 
         ChromeOptions chromeBrowserOptions = new ChromeOptions();
@@ -121,7 +117,7 @@ public class BrowserFactory {
         chromeBrowserOptions.setBrowserVersion("103");
         Map<String, Object> sauceOptions = new HashMap<>();
         sauceOptions.put("build", "<your build id>");
-        sauceOptions.put("name", "<your test name>");
+        sauceOptions.put("name", "testName");
         chromeBrowserOptions.setCapability("sauce:options", sauceOptions);
 
        return chromeBrowserOptions;

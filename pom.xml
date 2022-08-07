@@ -219,15 +219,21 @@
             <artifactId>snakeyaml</artifactId>
             <version>1.30</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.browserstack</groupId>
+            <artifactId>browserstack-java-sdk</artifactId>
+            <version>1.0.4</version>
+        </dependency>
     </dependencies>
 
-    <distributionManagement>
+    <!--<distributionManagement>
         <snapshotRepository>
             <id>snapshots</id>
             <name>a0sb3nuxblyw6-artifactory-primary-0-snapshots</name>
             <url>https://nikautomation.jfrog.io/artifactory/default-libs-snapshot</url>
         </snapshotRepository>
-    </distributionManagement>
+    </distributionManagement>-->
 
     <build>
         <pluginManagement>
@@ -239,6 +245,37 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven.compiler.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>3.3.0</version>
+                    <executions>
+                        <execution>
+                            <id>copy-dependencies</id>
+                            <phase>prepare-package</phase>
+                            <goals>
+                                <goal>copy-dependencies</goal>
+                            </goals>
+                            <configuration>
+                                <outputdirectory>
+                                    ${project.build.directory}/libs
+                                </outputdirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>3.2.1</version>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>test-jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
