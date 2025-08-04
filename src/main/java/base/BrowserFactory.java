@@ -13,44 +13,51 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 
 public class BrowserFactory {
+    private static final String GRID_URL = System.getProperty("grid.url", "http://localhost:4444/wd/hub");
 
     //Create WebDriver Object for a given Browser;
-    public WebDriver createBrowserInstance(String browser) throws MalformedURLException {
-        WebDriver driver = null;
-
-        if (browser.equalsIgnoreCase("chrome")) {
-
-            WebDriverManager.chromedriver().setup();
-            System.setProperty("WebDriver.chrome.silenceOutput", "true");
-            ChromeOptions chromeOptions = setChromeOptions();
-            //driver=new ChromeDriver(chromeOptions);
-            //driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chromeOptions);
-            driver = new RemoteWebDriver(new URL("http://54.206.101.220:4444/"), chromeOptions);
-
-        } else if (browser.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
-            FirefoxOptions firefoxOptions = setFirefoxOptions();
-            //driver=new FirefoxDriver(firefoxOptions);
-            driver = new RemoteWebDriver(new URL("http://54.206.101.220:4444/"), firefoxOptions);
-
-        } else if (browser.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
-            EdgeOptions edgeOptions = setEdgeOptions();
-            //driver=new EdgeDriver();
-            driver = new RemoteWebDriver(new URL("http://54.206.101.220:4444/"), edgeOptions);
+    public WebDriver createBrowserInstance(String browser, boolean isRemote) throws MalformedURLException {
+        if (isRemote) {
+            return createRemoteDriver(browser);
+        } else {
+            return createLocalDriver(browser);
         }
+    }
 
-        return driver;
+    private WebDriver createRemoteDriver(String browser) throws MalformedURLException {
+        return switch (browser.toLowerCase()) {
+            case "chrome" -> new RemoteWebDriver(URI.create(GRID_URL).toURL(), setChromeOptions());
+            case "firefox" -> new RemoteWebDriver(URI.create(GRID_URL).toURL(), setFirefoxOptions());
+            case "edge" -> new RemoteWebDriver(URI.create(GRID_URL).toURL(), setEdgeOptions());
+            default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
+        };
+    }
+
+    private WebDriver createLocalDriver(String browser) {
+        return switch (browser.toLowerCase()) {
+            case "chrome" -> {
+                WebDriverManager.chromedriver().setup();
+                yield new ChromeDriver(setChromeOptions());
+            }
+            case "firefox" -> {
+                WebDriverManager.firefoxdriver().setup();
+                yield new FirefoxDriver(setFirefoxOptions());
+            }
+            case "edge" -> {
+                WebDriverManager.edgedriver().setup();
+                yield new EdgeDriver(setEdgeOptions());
+            }
+            default -> throw new IllegalArgumentException("Unsupported browser: " + browser);
+        };
     }
 
     private ChromeOptions setChromeOptions() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--incognito");
         chromeOptions.addArguments("start-maximized");
-        chromeOptions.getLogLevel();
 
         return chromeOptions;
     }

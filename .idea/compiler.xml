@@ -10,5 +10,6 @@
         <module name="Planit_Technical_Assesment" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="21" />
   </component>
 </project>

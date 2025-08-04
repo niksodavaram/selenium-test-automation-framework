@@ -1,0 +1,1196 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>DocumentTitle</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">ReportName</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Aug 4, 2025 07:31:13 PM</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ValidateErrorMessagesOnContactPage</p>
+            <p class="text-sm">
+              <span>7:31:22 PM</span> / <span>00:00:13:342</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">ValidateErrorMessagesOnContactPage</h5>
+<span class='badge badge-success'>08.04.2025 7:31:22 PM</span>
+<span class='badge badge-danger'>08.04.2025 7:31:35 PM</span>
+<span class='badge badge-default'>00:00:13:342</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:22 PM</td>
+        <td>
+          Success Message Validating via DataProvider Started 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:22 PM</td>
+        <td>
+          HomePage instance has been instantiated 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:24 PM</td>
+        <td>
+          ForeName entered successfully==> The value entered is: Nik
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:25 PM</td>
+        <td>
+          Email entered successfully==> The value entered is: n.kumar9@outlook.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:26 PM</td>
+        <td>
+          Message Entered successfully==> The value entered is: Hi
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:28 PM</td>
+        <td>
+          Submit Button Clicked Successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:35 PM</td>
+        <td>
+          Success message Thanks by fName, we appreciate your feedback. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:35 PM</td>
+        <td>
+          back button clicked successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:35 PM</td>
+        <td>
+          Success Message Validating via DataProvider Ended 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:35 PM</td>
+        <td>
+          Test Case: ValidateErrorMessagesOnContactPage is Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ValidateErrorMessagesOnContactPage</p>
+            <p class="text-sm">
+              <span>7:31:28 PM</span> / <span>00:00:16:478</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">ValidateErrorMessagesOnContactPage</h5>
+<span class='badge badge-success'>08.04.2025 7:31:28 PM</span>
+<span class='badge badge-danger'>08.04.2025 7:31:44 PM</span>
+<span class='badge badge-default'>00:00:16:478</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:28 PM</td>
+        <td>
+          Success Message Validating via DataProvider Started 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:28 PM</td>
+        <td>
+          HomePage instance has been instantiated 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:29 PM</td>
+        <td>
+          ForeName entered successfully==> The value entered is: Sodavaram
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:31 PM</td>
+        <td>
+          Email entered successfully==> The value entered is: sodavaram45@gmail.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:32 PM</td>
+        <td>
+          Message Entered successfully==> The value entered is: Hi
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:34 PM</td>
+        <td>
+          Submit Button Clicked Successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:44 PM</td>
+        <td>
+          Success message Thanks by fName, we appreciate your feedback. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:31:44 PM</td>
+        <td>
+          back button clicked successfully ==> The button/click failed due to exception: org.openqa.selenium.ElementClickInterceptedException: Element <a class="btn" href=""> is not clickable at point (56,133) because another element <div class="modal-backdrop  in"> obscures it
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-27-generic', java.version: '21.0.8'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [51f53aaf-8247-47ea-b3a9-359509e94650, clickElement {id=afeb7adc-d872-4ed5-ae19-a7e601dc77f6}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 135.0, moz:accessibilityChecks: false, moz:buildID: 20250211160552, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 6.14.0-27-generic, moz:processID: 1330590, moz:profile: /tmp/rust_mozprofilegUEWKC, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Ubuntu; L...}
+Element: [[FirefoxDriver: firefox on linux (51f53aaf-8247-47ea-b3a9-359509e94650)] -> xpath: //a[@class='btn']]
+Session ID: 51f53aaf-8247-47ea-b3a9-359509e94650
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:44 PM</td>
+        <td>
+          Success Message Validating via DataProvider Ended 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:44 PM</td>
+        <td>
+          Test Case: ValidateErrorMessagesOnContactPage is Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ValidateErrorMessagesOnContactPage</p>
+            <p class="text-sm">
+              <span>7:31:42 PM</span> / <span>00:00:11:839</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">ValidateErrorMessagesOnContactPage</h5>
+<span class='badge badge-success'>08.04.2025 7:31:42 PM</span>
+<span class='badge badge-danger'>08.04.2025 7:31:53 PM</span>
+<span class='badge badge-default'>00:00:11:839</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:42 PM</td>
+        <td>
+          Success Message Validating via DataProvider Started 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:42 PM</td>
+        <td>
+          HomePage instance has been instantiated 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:43 PM</td>
+        <td>
+          ForeName entered successfully==> The value entered is: Analese
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:45 PM</td>
+        <td>
+          Email entered successfully==> The value entered is: analesenik@gmail.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:46 PM</td>
+        <td>
+          Message Entered successfully==> The value entered is: Hi
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:48 PM</td>
+        <td>
+          Submit Button Clicked Successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:53 PM</td>
+        <td>
+          Success message Thanks by fName, we appreciate your feedback. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:31:53 PM</td>
+        <td>
+          back button clicked successfully ==> The button/click failed due to exception: org.openqa.selenium.ElementClickInterceptedException: Element <a class="btn" href=""> is not clickable at point (56,133) because another element <div class="modal-backdrop  in"> obscures it
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-27-generic', java.version: '21.0.8'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [51c1e4be-3dab-4557-abb2-1b09e5ad818a, clickElement {id=d8bad446-6a13-497a-b3c6-b1e4cbfdf62e}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 135.0, moz:accessibilityChecks: false, moz:buildID: 20250211160552, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 6.14.0-27-generic, moz:processID: 1330613, moz:profile: /tmp/rust_mozprofilerttnRg, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Ubuntu; L...}
+Element: [[FirefoxDriver: firefox on linux (51c1e4be-3dab-4557-abb2-1b09e5ad818a)] -> xpath: //a[@class='btn']]
+Session ID: 51c1e4be-3dab-4557-abb2-1b09e5ad818a
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:53 PM</td>
+        <td>
+          Success Message Validating via DataProvider Ended 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:53 PM</td>
+        <td>
+          Test Case: ValidateErrorMessagesOnContactPage is Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ValidateErrorMessagesOnContactPage</p>
+            <p class="text-sm">
+              <span>7:31:56 PM</span> / <span>00:00:09:486</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">ValidateErrorMessagesOnContactPage</h5>
+<span class='badge badge-success'>08.04.2025 7:31:56 PM</span>
+<span class='badge badge-danger'>08.04.2025 7:32:05 PM</span>
+<span class='badge badge-default'>00:00:09:486</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:56 PM</td>
+        <td>
+          Success Message Validating via DataProvider Started 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:56 PM</td>
+        <td>
+          HomePage instance has been instantiated 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:57 PM</td>
+        <td>
+          ForeName entered successfully==> The value entered is: Persiya
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:58 PM</td>
+        <td>
+          Email entered successfully==> The value entered is: persiya32@hotmail.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:31:59 PM</td>
+        <td>
+          Message Entered successfully==> The value entered is: Hi
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:00 PM</td>
+        <td>
+          Submit Button Clicked Successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:05 PM</td>
+        <td>
+          Success message Thanks by fName, we appreciate your feedback. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:32:05 PM</td>
+        <td>
+          back button clicked successfully ==> The button/click failed due to exception: org.openqa.selenium.ElementClickInterceptedException: Element <a class="btn" href=""> is not clickable at point (56,133) because another element <div class="modal-backdrop  in"> obscures it
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-27-generic', java.version: '21.0.8'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [74cde214-46cd-4abb-baf2-7700531c0455, clickElement {id=0e9b9156-98d4-4a5e-98d8-848a5088ae95}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 135.0, moz:accessibilityChecks: false, moz:buildID: 20250211160552, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 6.14.0-27-generic, moz:processID: 1330615, moz:profile: /tmp/rust_mozprofileHhXRuA, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Ubuntu; L...}
+Element: [[FirefoxDriver: firefox on linux (74cde214-46cd-4abb-baf2-7700531c0455)] -> xpath: //a[@class='btn']]
+Session ID: 74cde214-46cd-4abb-baf2-7700531c0455
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:05 PM</td>
+        <td>
+          Success Message Validating via DataProvider Ended 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:05 PM</td>
+        <td>
+          Test Case: ValidateErrorMessagesOnContactPage is Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ValidateErrorMessagesOnContactPage</p>
+            <p class="text-sm">
+              <span>7:31:59 PM</span> / <span>00:00:08:896</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">ValidateErrorMessagesOnContactPage</h5>
+<span class='badge badge-success'>08.04.2025 7:31:59 PM</span>
+<span class='badge badge-danger'>08.04.2025 7:32:08 PM</span>
+<span class='badge badge-default'>00:00:08:896</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:59 PM</td>
+        <td>
+          Success Message Validating via DataProvider Started 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:31:59 PM</td>
+        <td>
+          HomePage instance has been instantiated 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:00 PM</td>
+        <td>
+          ForeName entered successfully==> The value entered is: Caleb
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:01 PM</td>
+        <td>
+          Email entered successfully==> The value entered is: caleb2021@yahoomail.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:02 PM</td>
+        <td>
+          Message Entered successfully==> The value entered is: Hi
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:04 PM</td>
+        <td>
+          Submit Button Clicked Successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:08 PM</td>
+        <td>
+          Success message Thanks by fName, we appreciate your feedback. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:32:08 PM</td>
+        <td>
+          back button clicked successfully ==> The button/click failed due to exception: org.openqa.selenium.ElementClickInterceptedException: Element <a class="btn" href=""> is not clickable at point (56,133) because another element <div class="modal-backdrop  in"> obscures it
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-27-generic', java.version: '21.0.8'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [0f081c13-f9ee-400b-9c74-a3c4cf160298, clickElement {id=0580acfa-897f-4b93-adbf-61e3dbaa2699}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 135.0, moz:accessibilityChecks: false, moz:buildID: 20250211160552, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 6.14.0-27-generic, moz:processID: 1330607, moz:profile: /tmp/rust_mozprofilemwtDoR, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Ubuntu; L...}
+Element: [[FirefoxDriver: firefox on linux (0f081c13-f9ee-400b-9c74-a3c4cf160298)] -> xpath: //a[@class='btn']]
+Session ID: 0f081c13-f9ee-400b-9c74-a3c4cf160298
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:08 PM</td>
+        <td>
+          Success Message Validating via DataProvider Ended 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:08 PM</td>
+        <td>
+          Test Case: ValidateErrorMessagesOnContactPage is Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ValidateErrorMessagesOnContactPage</p>
+            <p class="text-sm">
+              <span>7:32:11 PM</span> / <span>00:00:06:159</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">ValidateErrorMessagesOnContactPage</h5>
+<span class='badge badge-success'>08.04.2025 7:32:11 PM</span>
+<span class='badge badge-danger'>08.04.2025 7:32:17 PM</span>
+<span class='badge badge-default'>00:00:06:159</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:11 PM</td>
+        <td>
+          Success Message Validating via DataProvider Started 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:11 PM</td>
+        <td>
+          HomePage instance has been instantiated 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:12 PM</td>
+        <td>
+          ForeName entered successfully==> The value entered is: Aaron
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:13 PM</td>
+        <td>
+          Email entered successfully==> The value entered is: aaron123@gmail.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:14 PM</td>
+        <td>
+          Message Entered successfully==> The value entered is: Hi
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:15 PM</td>
+        <td>
+          Submit Button Clicked Successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:17 PM</td>
+        <td>
+          Success message Thanks by fName, we appreciate your feedback. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:17 PM</td>
+        <td>
+          back button clicked successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:17 PM</td>
+        <td>
+          Success Message Validating via DataProvider Ended 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:17 PM</td>
+        <td>
+          Test Case: ValidateErrorMessagesOnContactPage is Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ValidateErrorMessagesOnContactPage</p>
+            <p class="text-sm">
+              <span>7:32:15 PM</span> / <span>00:00:16:698</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">ValidateErrorMessagesOnContactPage</h5>
+<span class='badge badge-success'>08.04.2025 7:32:15 PM</span>
+<span class='badge badge-danger'>08.04.2025 7:32:32 PM</span>
+<span class='badge badge-default'>00:00:16:698</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:15 PM</td>
+        <td>
+          Success Message Validating via DataProvider Started 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:15 PM</td>
+        <td>
+          HomePage instance has been instantiated 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:17 PM</td>
+        <td>
+          ForeName entered successfully==> The value entered is: Sammy
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:18 PM</td>
+        <td>
+          Email entered successfully==> The value entered is: sammy.jayrani@gmail.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:19 PM</td>
+        <td>
+          Message Entered successfully==> The value entered is: Hi
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:21 PM</td>
+        <td>
+          Submit Button Clicked Successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:32 PM</td>
+        <td>
+          Success message Thanks by fName, we appreciate your feedback. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:32:32 PM</td>
+        <td>
+          back button clicked successfully ==> The button/click failed due to exception: org.openqa.selenium.ElementClickInterceptedException: Element <a class="btn" href=""> is not clickable at point (56,133) because another element <div class="modal-backdrop  in"> obscures it
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-27-generic', java.version: '21.0.8'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [c72bf850-e1f7-4ff5-ab14-8627a8bae785, clickElement {id=c49c977b-85ae-4ade-904a-29ca20e68baf}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 135.0, moz:accessibilityChecks: false, moz:buildID: 20250211160552, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 6.14.0-27-generic, moz:processID: 1330542, moz:profile: /tmp/rust_mozprofilegQgILe, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Ubuntu; L...}
+Element: [[FirefoxDriver: firefox on linux (c72bf850-e1f7-4ff5-ab14-8627a8bae785)] -> xpath: //a[@class='btn']]
+Session ID: c72bf850-e1f7-4ff5-ab14-8627a8bae785
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:32 PM</td>
+        <td>
+          Success Message Validating via DataProvider Ended 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:32 PM</td>
+        <td>
+          Test Case: ValidateErrorMessagesOnContactPage is Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="18"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ValidateErrorMessagesOnContactPage</p>
+            <p class="text-sm">
+              <span>7:32:17 PM</span> / <span>00:00:18:480</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">ValidateErrorMessagesOnContactPage</h5>
+<span class='badge badge-success'>08.04.2025 7:32:17 PM</span>
+<span class='badge badge-danger'>08.04.2025 7:32:35 PM</span>
+<span class='badge badge-default'>00:00:18:480</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:17 PM</td>
+        <td>
+          Success Message Validating via DataProvider Started 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:17 PM</td>
+        <td>
+          HomePage instance has been instantiated 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:18 PM</td>
+        <td>
+          ForeName entered successfully==> The value entered is: Abraham
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:19 PM</td>
+        <td>
+          Email entered successfully==> The value entered is: abraham@gmail.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:20 PM</td>
+        <td>
+          Message Entered successfully==> The value entered is: Hi
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:21 PM</td>
+        <td>
+          Submit Button Clicked Successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:35 PM</td>
+        <td>
+          Success message Thanks by fName, we appreciate your feedback. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:32:35 PM</td>
+        <td>
+          back button clicked successfully ==> The button/click failed due to exception: org.openqa.selenium.ElementClickInterceptedException: Element <a class="btn" href=""> is not clickable at point (56,133) because another element <div class="modal-backdrop  in"> obscures it
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-27-generic', java.version: '21.0.8'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [c5b665a4-d11a-4d1a-87fd-f48e09ca1e83, clickElement {id=6b28692d-e504-4194-af15-6b24f5fe1b61}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 135.0, moz:accessibilityChecks: false, moz:buildID: 20250211160552, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 6.14.0-27-generic, moz:processID: 1330527, moz:profile: /tmp/rust_mozprofilevh51Ss, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Ubuntu; L...}
+Element: [[FirefoxDriver: firefox on linux (c5b665a4-d11a-4d1a-87fd-f48e09ca1e83)] -> xpath: //a[@class='btn']]
+Session ID: c5b665a4-d11a-4d1a-87fd-f48e09ca1e83
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:35 PM</td>
+        <td>
+          Success Message Validating via DataProvider Ended 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:35 PM</td>
+        <td>
+          Test Case: ValidateErrorMessagesOnContactPage is Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="20"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">ValidateErrorMessagesOnContactPage</p>
+            <p class="text-sm">
+              <span>7:32:17 PM</span> / <span>00:00:06:055</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">ValidateErrorMessagesOnContactPage</h5>
+<span class='badge badge-success'>08.04.2025 7:32:17 PM</span>
+<span class='badge badge-danger'>08.04.2025 7:32:23 PM</span>
+<span class='badge badge-default'>00:00:06:055</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:17 PM</td>
+        <td>
+          Success Message Validating via DataProvider Started 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:17 PM</td>
+        <td>
+          HomePage instance has been instantiated 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:18 PM</td>
+        <td>
+          ForeName entered successfully==> The value entered is: Sara
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:19 PM</td>
+        <td>
+          Email entered successfully==> The value entered is: sara91@hotmail.com
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:20 PM</td>
+        <td>
+          Message Entered successfully==> The value entered is: Hi
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:21 PM</td>
+        <td>
+          Submit Button Clicked Successfully==> The button/link clicked successfully
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:23 PM</td>
+        <td>
+          Success message Thanks by fName, we appreciate your feedback. 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>7:32:23 PM</td>
+        <td>
+          back button clicked successfully ==> The button/click failed due to exception: org.openqa.selenium.ElementClickInterceptedException: Element <a class="btn" href=""> is not clickable at point (56,133) because another element <div class="modal-backdrop  in"> obscures it
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Linux', os.arch: 'amd64', os.version: '6.14.0-27-generic', java.version: '21.0.8'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [9f5d9b7d-3f9c-421c-9d8c-2a47181b6b05, clickElement {id=6fa9a21d-6a6e-44ba-99bc-0d876d84366d}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 135.0, moz:accessibilityChecks: false, moz:buildID: 20250211160552, moz:geckodriverVersion: 0.35.0, moz:headless: false, moz:platformVersion: 6.14.0-27-generic, moz:processID: 1330526, moz:profile: /tmp/rust_mozprofilewAJtyc, moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: normal, platformName: linux, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (X11; Ubuntu; L...}
+Element: [[FirefoxDriver: firefox on linux (9f5d9b7d-3f9c-421c-9d8c-2a47181b6b05)] -> xpath: //a[@class='btn']]
+Session ID: 9f5d9b7d-3f9c-421c-9d8c-2a47181b6b05
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>7:32:23 PM</td>
+        <td>
+          Success Message Validating via DataProvider Ended 
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>7:32:23 PM</td>
+        <td>
+          Test Case: ValidateErrorMessagesOnContactPage is Passed.
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Aug 4, 2025 07:31:13 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Aug 4, 2025 07:32:36 PM</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>2</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>7</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='22%'>
+<b>2</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='77%'><b>7</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='62%'><b>56</b> events passed</small></div>
+<div>
+<small data-tooltip='7%'><b>7</b> events failed,
+<b data-tooltip='%'>27</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"ValidateErrorMessagesOnContactPage":13.342,"ValidateErrorMessagesOnContactPage":16.478,"ValidateErrorMessagesOnContactPage":11.839,"ValidateErrorMessagesOnContactPage":9.486,"ValidateErrorMessagesOnContactPage":8.896,"ValidateErrorMessagesOnContactPage":6.159,"ValidateErrorMessagesOnContactPage":16.698,"ValidateErrorMessagesOnContactPage":18.48,"ValidateErrorMessagesOnContactPage":6.055
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>Executed on Environment: </td>
+<td>https://jupiter.cloud.planittesting.com</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 2,
+failParent: 7,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 56,
+failEvents: 7,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 27
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

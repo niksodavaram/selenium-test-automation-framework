@@ -6,29 +6,33 @@
     </listeners>
     <test name = "EndToEndErrorMessagesAndErrorMessagesGoneTest">
         <parameter name="browser" value="firefox"/>
+        <parameter name="isRemote" value="false" />
         <classes>
-            <class name = "testcases.TL01_ValidatingErrorMessagesAndErrorMessagesGoneTest" />
+            <class name = "testcases.ValidatingErrorMessagesAndErrorMessagesGoneTest" />
         </classes>
     </test>
 
     <test name = "EndToEndSuccessMessageValidationTest">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="firefox"/>
+        <parameter name="isRemote" value="false" />
         <classes>
-            <class name = "testcases.TL02_ValidatingSuccessMessageTest" />
+            <class name = "testcases.ValidatingSuccessMessageTest" />
         </classes>
     </test>
 
     <test name = "EndToEndSuccessErrorMessageValidationWithInvalidDataTest">
-    <parameter name="browser" value="edge"/>
+    <parameter name="browser" value="firefox"/>
+        <parameter name="isRemote" value="false" />
     <classes>
-        <class name = "testcases.TL03_ValidatingErrorMessagesWithInvalidDataTest" />
+        <class name = "testcases.ValidatingErrorMessagesWithInvalidDataTest" />
     </classes>
 </test>
 
     <test name = "EndToEndShopAndCartPageTest">
     <parameter name="browser" value="chrome"/>
+        <parameter name="isRemote" value="false" />
     <classes>
-        <class name = "testcases.TL04_ValidatingShopAndCartPageTest" />
+        <class name = "testcases.ValidatingShopAndCartPageTest" />
     </classes>
 </test>
 </suite>
