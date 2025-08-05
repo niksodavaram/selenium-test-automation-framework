@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: unleash_user
+      POSTGRES_PASSWORD: unleash_password
+      POSTGRES_DB: unleash
+    ports:
+      - "5434:5434"
+    volumes:
+      - unleash-db-data:/var/lib/postgresql/data
+
+  unleash:
+    image: unleashorg/unleash-server:latest
+    ports:
+      - "4244:4244"
+    environment:
+      DATABASE_HOST: db
+      DATABASE_NAME: unleash
+      DATABASE_USERNAME: unleash_user
+      DATABASE_PASSWORD: unleash_password
+      DATABASE_SSL: "false"
+      # Default admin login
+      INIT_ADMIN_API_TOKENS: "default:development.unleash-insecure-api-token"
+      # Optionally set initial admin user
+      UNLEASH_ADMIN_USER: "admin"
+      UNLEASH_ADMIN_PASSWORD: "unleash4all"
+      UNLEASH_ADMIN_EMAIL: "admin@example.com"
+    depends_on:
+      - db
+
+volumes:
+  unleash-db-data:

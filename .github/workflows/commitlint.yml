@@ -1,0 +1,15 @@
+name: Commit Message Lint
+
+on: [pull_request]
+
+jobs:
+  commitlint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint PR commit messages
+        uses: wagoid/commitlint-github-action@v6
+        with:
+          configFile: .commitlintrc.yml

@@ -1,0 +1,33 @@
+name: Auto-Create PR With Dynamic Reviewers
+
+on:
+  push:
+    branches:
+      - 'feature/*'
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get Collaborators
+        id: collaborators
+        run: |
+          curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/${{ github.repository }}/collaborators \
+          | jq -r '.[].login' > collaborators.txt
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref_name }}
+          base: main
+          title: "Auto PR: ${{ github.ref_name }}"
+          body: |
+            This PR was automatically created for branch `${{ github.ref_name }}`
+          reviewers: ${{ steps.collaborators.outputs.reviewers }}
+          assignees: ${{ steps.collaborators.outputs.reviewers }}
