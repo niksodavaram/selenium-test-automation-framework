@@ -1,0 +1,4 @@
+webdriver:
+  pages:
+    url: https://jupiter.cloud.planittesting.com
+

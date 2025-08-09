@@ -2,11 +2,13 @@ package base;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+
 import org.testng.annotations.*;
 import reportgenerator.ExtentFactory;
 import reportgenerator.ExtentManager;
-import util.ReadConfigProperties;
+import util.YamlConfigLoader;
 
+import java.sql.Driver;
 import java.time.Duration;
 
 public class TestBase {
@@ -32,7 +34,7 @@ public class TestBase {
     @Parameters({"browser", "isRemote"})
     public void launchBrowser(String browser, boolean isRemote) throws Exception {
 
-        String url = ReadConfigProperties.getPropertyValueByKey("url");
+        String url = YamlConfigLoader.getUrl();
 
         if (isRemote) {
             DriverFactory.getInstance().setDriverThreadLocal(browserFactory.createBrowserInstance(browser, true));
@@ -42,6 +44,7 @@ public class TestBase {
 
         // Maximize the browser and set timeouts
         DriverFactory.getInstance().getDriverThreadLocal().manage().window().maximize();
+
         DriverFactory.getInstance().getDriverThreadLocal().get(url);
         DriverFactory.getInstance().getDriverThreadLocal().manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
 
