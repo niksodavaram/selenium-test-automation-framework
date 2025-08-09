@@ -19,57 +19,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TestNGListeners implements ITestListener {
-    static ExtentReports report;
-    ExtentTest test;
+    private static ExtentReports report;
 
-    public void onTestStart(ITestResult result) {
-        //before each test case
-        test = report.createTest(result.getMethod().getMethodName());
-        ExtentFactory.getInstance().setExtentTestThreadLocal(test);
-    }
-
-    public void onTestSuccess(ITestResult result) {
-        ExtentFactory.getInstance().getExtent().log(Status.PASS, "Test Case: "+result.getMethod().getMethodName()+ " is Passed.");
-        ExtentFactory.getInstance().removeExtentObject();
-    }
-
-    public void onTestFailure(ITestResult result) {
-        ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: "+result.getMethod().getMethodName()+ " is Failed.");
-        ExtentFactory.getInstance().getExtent().log(Status.FAIL, result.getThrowable());
-
-        //add screenshot for failed test.
-        File src = ((TakesScreenshot) DriverFactory.getInstance().getDriverThreadLocal()).getScreenshotAs(OutputType.FILE);
-        SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyy HH-mm-ss");
-        Date date = new Date();
-        String actualDate = format.format(date);
-
-        String screenshotPath = System.getProperty("user.dir")+
-                "/Screenshots/"+actualDate+".jpeg";
-        File dest = new File(screenshotPath);
-
-        try {
-            FileUtils.copyFile(src, dest);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        ExtentFactory.getInstance().getExtent().addScreenCaptureFromPath(screenshotPath, "Test case failure screenshot");
-        ExtentFactory.getInstance().removeExtentObject();
-
-    }
-
-    public void onTestSkipped(ITestResult result) {
-        ExtentFactory.getInstance().getExtent().log(Status.SKIP, "Test Case: "+result.getMethod().getMethodName()+ " is skipped");
-        ExtentFactory.getInstance().removeExtentObject();
-    }
-
-    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-        ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: "+result.getMethod().getMethodName()+ " Failed but with success percentage");
-    }
-
-    public void onTestFailedWithTimeout(ITestResult result) {
-        ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: "+result.getMethod().getMethodName()+ " timeOut Exception: Element couldn't be found");
-    }
-
+    @Override
     public void onStart(ITestContext context) {
         try {
             report = ExtentManager.getExtentReport();
@@ -78,8 +30,70 @@ public class TestNGListeners implements ITestListener {
         }
     }
 
+    @Override
+    public void onTestStart(ITestResult result) {
+        // Unique test name: class.method
+        String testName = result.getTestClass().getName() + "." + result.getMethod().getMethodName();
+        ExtentTest test = report.createTest(testName);
+
+        // Assign categories (browser/platform) for filtering in the HTML report
+        String browser = result.getTestContext().getCurrentXmlTest().getParameter("browser");
+        String platform = result.getTestContext().getCurrentXmlTest().getParameter("platformName");
+        if (browser != null) test.assignCategory(browser);
+        if (platform != null) test.assignCategory(platform);
+        ExtentFactory.getInstance().setExtentTestThreadLocal(report.createTest(testName));
+    }
+
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        ExtentFactory.getInstance().getExtent().log(Status.PASS, "Test Case: " + result.getMethod().getMethodName() + " is Passed.");
+        ExtentFactory.getInstance().removeExtentObject();
+    }
+
+    @Override
+    public void onTestFailure(ITestResult result) {
+        ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: " + result.getMethod().getMethodName() + " is Failed.");
+        ExtentFactory.getInstance().getExtent().log(Status.FAIL, result.getThrowable());
+
+        // Screenshot on failure
+        File src = ((TakesScreenshot) DriverFactory.getInstance().getDriverThreadLocal()).getScreenshotAs(OutputType.FILE);
+        String actualDate = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(new Date());
+        String screenshotPath = System.getProperty("user.dir") + "/Screenshots/" + actualDate + ".jpeg";
+        File dest = new File(screenshotPath);
+
+        try {
+            FileUtils.copyFile(src, dest);
+            ExtentFactory.getInstance().getExtent().addScreenCaptureFromPath(screenshotPath, "Test case failure screenshot");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ExtentFactory.getInstance().removeExtentObject();
+    }
+
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        ExtentFactory.getInstance().getExtent().log(Status.SKIP, "Test Case: " + result.getMethod().getMethodName() + " is skipped");
+        ExtentFactory.getInstance().removeExtentObject();
+    }
+
+    @Override
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+        ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: " + result.getMethod().getMethodName() + " Failed but with success percentage");
+    }
+
+    @Override
+    public void onTestFailedWithTimeout(ITestResult result) {
+        ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: " + result.getMethod().getMethodName() + " timeOut Exception: Element couldn't be found");
+        ExtentFactory.getInstance().removeExtentObject();
+    }
+
+    @Override
     public void onFinish(ITestContext context) {
-        //close extent
         report.flush();
+        try {
+            AllureReportGenerator.generateReport();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

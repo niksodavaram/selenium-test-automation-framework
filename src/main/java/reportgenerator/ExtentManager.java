@@ -4,7 +4,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import util.DateUtil;
-import util.ReadConfigProperties;
+import util.YamlConfigLoader;
 
 /**
  * The ExtentManager is responsible for managing and creating the ExtentReports object
@@ -27,18 +27,37 @@ public class ExtentManager {
 
     public static ExtentReports getExtentReport() throws Exception {
 
-        String reportName = System.getProperty("user.dir") +
-                "/ExtentReports/ExecutionReport_" + DateUtil.getTimeStamp() + ".html";
+        if (extentReports == null) {
+            String url = YamlConfigLoader.getUrl();
 
-        sparkReporter = new ExtentSparkReporter(reportName);
-        extentReports = new ExtentReports();
-        extentReports.attachReporter(sparkReporter);
-        sparkReporter.config().setDocumentTitle("DocumentTitle");
-        sparkReporter.config().setTheme(Theme.STANDARD);
-        sparkReporter.config().setReportName("ReportName");
+            // Get Surefire fork number (null if not forking)
+            String forkNum = System.getProperty("surefire.forkNumber");
+            String timestamp = DateUtil.getTimeStamp();
+            String reportName;
 
-        extentReports.setSystemInfo("Executed on Environment: ", ReadConfigProperties.getPropertyValueByKey("url"));
+            if (forkNum != null) {
+                // Forked run: make file unique per fork
+                reportName = System.getProperty("user.dir") +
+                        "/ExtentReports/ExecutionReport_Fork" + forkNum + "_" + timestamp + ".html";
+            } else {
+                // Regular run
+                reportName = System.getProperty("user.dir") +
+                        "/ExtentReports/ExecutionReport_" + timestamp + ".html";
+            }
+            sparkReporter = new ExtentSparkReporter(reportName);
+            sparkReporter.config().setDocumentTitle("DocumentTitle");
+            sparkReporter.config().setTheme(Theme.STANDARD);
+            sparkReporter.config().setReportName("ReportName");
 
+            extentReports = new ExtentReports();
+            extentReports.attachReporter(sparkReporter);
+            extentReports.setSystemInfo("Executed on Environment: ", url);
+            extentReports.setSystemInfo("OS", System.getProperty("os.name"));
+            extentReports.setSystemInfo("Java Version", System.getProperty("java.version"));
+            extentReports.setSystemInfo("Browser", System.getProperty("browser", "N/A"));
+            extentReports.setSystemInfo("Platform", System.getProperty("platformName", "N/A"));
+
+        }
         return extentReports;
     }
 

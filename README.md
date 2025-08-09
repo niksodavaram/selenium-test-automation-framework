@@ -1,6 +1,5 @@
 <p align="center">
-  <!-- Replace with your logo if available -->
-  <img src="https://cdn.simpleicons.org/selenium/43B02A" alt="Selenium" width="60" alt="Project logo" width="180" />
+  <img src="https://cdn.simpleicons.org/selenium/43B02A" alt="Selenium" width="60" />
 </p>
 
 <h1 align="center">
@@ -8,7 +7,7 @@
 </h1>
 
 <p align="center">
-  <b>Modern, scalable test automation framework built with Java, Selenium, TestNG, and Singleton design pattern.</b>
+  <b>Modern, scalable test automation framework built with Java, Selenium, TestNG, Singleton, and best practices.</b>
 </p>
 
 <p align="center">
@@ -31,107 +30,158 @@
 
 ## 🚀 Overview
 
-This project is a **robust, maintainable, and scalable automation testing framework** for web applications, built using:
+A robust, maintainable, and **scalable QA automation framework** for web applications, built using:
 
-- 🟦 **Java**
-- 🟦 **Selenium WebDriver**
-- 🟦 **TestNG**
-- 🟦 **Singleton Pattern**
-- 🟦 **Maven**
+- 🟦 **Java 17+**
+- 🟦 **Selenium WebDriver 4.x**
+- 🟧 **TestNG 7.x** (parallel execution, factories, dataproviders)
+- 🟦 **Singleton Pattern** (with `ThreadLocal` for parallel-safe WebDriver)
+- 🟦 **Extent Reports** (custom `ExtentFactory`)
+- 🟦 **Maven** (Surefire plugin fork mode)
+- 🟦 **JSON & Excel data sources**
+- 🟦 **Custom Listeners** (TestNG, WebDriver)
 - 🟦 **Docker** (optional)
-- 🟦 **GitHub Actions** for CI/CD
-
-It is designed to help teams quickly automate UI test cases as per requirements, with support for running tests locally or in CI pipelines.
+- 🟦 **GitHub Actions** for CI
 
 ---
 
 ## 📂 Project Structure
-```commandline
-Singletgon-based-Java-Selenium-Testing-Framework/
-├── .github/workflows/ # GitHub Actions CI workflows
-├── .idea/ # IntelliJ IDEA settings (should be gitignored)
-├── .mvn/wrapper/ # Maven Wrapper
-├── docker/ # Docker support files
+```
+Selenium-Test-Automation-Framework/
+├── .github/workflows/ # CI workflows
 ├── Screenshots/ # Test evidence/screenshots
 ├── src/
 │ ├── main/
 │ └── test/
+│ ├── java/
+│ │ ├── base/
+│ │ ├── dto/
+│ │ ├── factories/
+│ │ ├── listeners/
+│ │ │ ├── TestNGListeners.java
+│ │ │ └── WebDriverListener.java
+│ │ ├── pages/
+│ │ ├── reportgenerator/
+│ │ │ └── ExtentFactory.java
+│ │ ├── tests/
+│ │ └── utils/
+│ └── resources/
+│ ├── testData/
+│ │ └── successMessageTestData.json
+│ └── testcases.xlsx
 ├── Dockerfile
-├── docker-compose-v3.yml
+├── docker-compose.yml
 ├── pom.xml
 ├── testng.xml
 └── README.md
-```
+``````
+
+
 ---
 
-## 🛠️ Getting Started
+## 🏗️ Key Features & Design Patterns
 
-### **Prerequisites**
+- **Singleton ThreadLocal WebDriver:**  
+  Ensures thread-safe browser sessions for parallel tests.
 
-- Java 17+
-- Maven 3.6+
-- (Optional) Docker
+- **Page Object Model (POM):**  
+  Modular, maintainable page abstractions.
 
-### **Clone the repo:**
+- **Parallel Execution:**  
+  Runs tests in parallel via TestNG and Maven Surefire (`forkCount > 1`).
 
-```bash
-git clone https://github.com/niksodavaram/Singletgon-based-Java-Selenium-Testing-Framework.git
-cd Singletgon-based-Java-Selenium-Testing-Framework
+- **Hybrid Data Sources:**
+    - **Excel DataProvider:** For parameterized tests using Excel files.
+    - **JSON TestNG Factory:** For dynamic test instance creation using JSON test data and TestNG’s `@Factory`.
+
+- **Advanced Reporting:**
+    - **ExtentFactory:** Centralized, singleton-based ExtentReports management.
+    - **Screenshot Attachments:** For failed steps.
+
+- **Custom Listeners:**
+    - **TestNGListeners:** Implements `ITestListener` for reporting, logging, and hooks.
+    - **WebDriverListener:** Implements WebDriver event hooks for enhanced logging, screenshot, and debugging.
+
+- **CI/CD Ready:**  
+  Integrated with GitHub Actions.
+
+---
+
+## 💡 Recent Enhancements
+
+- **Integrated `ExtentFactory`**:  
+  Singleton ExtentReports instance for consistent, thread-safe reporting.
+
+- **Custom `TestNGListeners` and `WebDriverListener`**:  
+  Hooks for test start, pass, fail, and browser events (e.g., automatic screenshot capture on failure).
+
+- **TestNG Factory Pattern with JSON**:  
+  Generates multiple test instances dynamically from JSON data, enabling true data-driven and parallelized testing.
+
+- **Hybrid Data Providers**:  
+  Use both Excel-based DataProvider and JSON-factory-based approaches in the same suite.
+
+- **Robust Parallelism**:  
+  ThreadLocal WebDriver + TestNG parallel mode + Maven Surefire forked JVMs = safe, scalable parallel test execution.
+
+---
+
+## 🧑‍💻 Example: TestNG Factory with JSON
+
+```java
+@Factory
+public Object[] createInstances() {
+    List<SuccessMessageDTO> testData = JsonTestDataReader.getSuccessMessageData("testData/successMessageTestData.json");
+    if (testData == null || testData.isEmpty()) throw new RuntimeException("No test data found!");
+    return testData.stream().map(ValidatingSuccessMessageTests::new).toArray();
+}
 ```
-Install dependencies:
+🧑‍💻 Example: Excel DataProvider
+```java
+
+@DataProvider(name = "excelData")
+public Object[][] getData() {
+    return ExcelUtils.readExcelData("testcases.xlsx", "Sheet1");
+}
+```
+
+## 🏃 Running Tests
+
+Local:
 ```bash
 mvn clean install
-```
-Run tests:
-bash
-
 mvn test
-
-or with TestNG:
-bash
-
+````
+Specific TestNG Suite:
+```bash
 mvn clean test -DsuiteXmlFile=testng.xml
-
-Run with Docker:
-
-    (If supported in your project)
-
-bash
-
+````
+Parallel Execution:
+Configurable via testng.xml and Maven Surefire plugin in pom.xml
+Example in testng.xml:
+```xml
+<suite name="Parallel Suite" parallel="methods" thread-count="5">
+        ...
+</suite>
+```
+Docker:
+```bash
 docker-compose up --build
+````
+## 📑 Reporting
+```
+Extent Reports:
+HTML reports (with screenshots) are auto-generated after each run.
+Allure Reporting:
+(If enabled in your project)
+```
+## 🧩 Extensibility
 
-⚙️ Features
+* Add new browsers by extending WebDriverManager
+* Add new data sources (CSV, DB, etc.)
+* Add more listeners for advanced hooks
 
-    Singleton WebDriver Management for efficient browser resource usage
-    Page Object Model (POM) for maintainable test code
-    TestNG for powerful test orchestration
-    CI/CD integration via GitHub Actions
-    Environment configuration via YAML/properties
-    Extensible for multiple browsers and environments
-    Screenshot capture for failed tests
-    Allure reporting and more
-
-📸 Screenshots
-
-<p align="center">
-
-<img src="Screenshots/test_report.png" alt="Sample Test Report" width="600" />
-
-</p>
-🔗 Useful Commands
-Command	Description
-mvn clean install	Build and verify tests
-mvn test	Run all tests
-docker-compose up --build	Run tests in Docker
-📑 Documentation
-
-    See testng.xml for suite and test group configuration.
-    For test case details, refer to the provided Excel artifacts (RTM/test cases).
-    See .github/workflows/ for CI/CD setup.
-
-🤝 Contributing
-
-Contributions are welcome!
+## 🤝 Contributing
 
     Fork this repo
     Create your feature branch (git checkout -b feature/YourFeature)
@@ -139,13 +189,9 @@ Contributions are welcome!
     Push to the branch (git push origin feature/YourFeature)
     Open a Pull Request
 
-📄 License
+## 📄 License
 
 This project is licensed under the MIT License.
-Feel free to use, share, and improve!
-🙋‍♂️ Contact
-
-For questions, open an issue or contact the maintainer.
 
 <p align="center">
 
@@ -154,17 +200,3 @@ For questions, open an issue or contact the maintainer.
 </p>
 
 ```
-Notes:
-
-    Logo:
-        If you have a logo, place it in Screenshots/logo.png or update the path accordingly.
-        If not, you can comment/remove the logo <img> tag.
-
-    GitHub Actions Badge:
-        Update your-workflow.yml in the badge URL to match your actual workflow file name (e.g., ci.yml, main.yml).
-
-    License:
-        If you have a LICENSE file, the badge will work. If not, you may remove or update that badge.
-
-    Screenshots:
-        Add real screenshot files as needed.

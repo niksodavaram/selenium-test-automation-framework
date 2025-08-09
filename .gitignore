@@ -1,2 +1,7 @@
 # Project exclude paths
 /target/
+allure-results
+allure-report
+ExtentReports
+.idea
+
