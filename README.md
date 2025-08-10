@@ -145,7 +145,7 @@ public Object[][] getData() {
 }
 ```
 
-## 🏃 Running Tests
+## 🏃 Running Tests Locally
 
 Local:
 ```bash
@@ -164,10 +164,61 @@ Example in testng.xml:
         ...
 </suite>
 ```
-Docker:
+## 🚀 Running Tests via Docker
+
+Once you have built and pushed your Docker image to Docker Hub, others simply need Docker installed.
+They can then pull and run your tests without any setup.
+### 1. Pull and Run the Image
+
+docker pull yourdockerhubusername/selenium-template:latest
+docker run --rm yourdockerhubusername/selenium-template:latest
+
+### 2. To Get Test Reports Locally
+
+Mount a local directory to copy out test reports (e.g., Allure, Extent):
+bash
+
+docker run --rm -v $(pwd)/reports:/app/target yourdockerhubusername/selenium-template:latest
+##### Reports will be in ./reports after the run
+
+### 3. Compose (Optional, for multi-service setup)
+
+If you want to use docker-compose (for example, to orchestrate Selenium Grid + your tests):
+
+docker-compose.yml
+```yaml
+
+version: '3.8'
+services:
+tests:
+image: yourdockerhubusername/selenium-template:latest
+volumes:
+- ./reports:/app/target
+```
+Run with:
 ```bash
 docker-compose up --build
-````
+```
+
+## 🚀 Run Selenium/TestNG Tests with Docker
+
+1. **Pull the latest image:**
+   ```bash
+   docker pull yourdockerhubusername/selenium-template:latest
+   ```
+    Run tests:
+    ```bash
+    docker run --rm yourdockerhubusername/selenium-template:latest
+    ```
+
+(Optional) Get the reports:
+```bash
+
+  docker run --rm -v $(pwd)/reports:/app/target yourdockerhubusername/selenium-template:latest
+    # After the run, open ./reports for HTML reports
+```
+All dependencies (Java, Maven, Chrome, etc.) are included.
+No setup required. Just Docker!
 ## 📑 Reporting
 ```
 Extent Reports:

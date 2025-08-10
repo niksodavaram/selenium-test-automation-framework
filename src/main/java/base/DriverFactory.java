@@ -20,6 +20,8 @@ import java.util.concurrent.locks.ReentrantLock;
  * - Simplifies management of WebDriver lifecycle across multiple threads
  */
 public class DriverFactory {
+    private static volatile DriverFactory driverFactoryInstance;
+    private static final Lock lock = new ReentrantLock();
 
     //Private constructor to prevent installation of the class from outside
     // Ensures tha Singleton Pattern is upheld
@@ -31,11 +33,10 @@ public class DriverFactory {
      * Declared as `volatile` to ensure visibility of changes across threads
      * Ensures that only one instance if the class is created globally
      */
-    private static volatile DriverFactory driverFactoryInstance = null;
 
     // Lock instance for thread-safe access to the Singleton instance
     // ReentrantLock provides flexibility compared to synchronized blocks
-    private static final Lock lock = new ReentrantLock();
+
 
     // Static method to get the singe instance of this class
     public static DriverFactory getInstance() {
